@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Calendar</title>
+</head>
+<body style="font-family: Arial; background-color: #f9f9f9; padding: 20px;">
+    <h2 style="text-align:center; color: darkblue;">JavaScript Calendar Generator</h2>
+
+    <script>
+        let year = parseInt(prompt("Enter the year (e.g., 2025):"));
+
+        if (isNaN(year)) {
+            document.write("<h3 style='color:red;'>Please enter a valid year!</h3>");
+        } else {
+            document.write("<h2 style='text-align:center; color:darkgreen;'>Calendar for " + year + "</h2>");
+
+            let months = [
+                "January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                daysInMonth[1] = 29;
+            }
+
+            for (let month = 0; month < 12; month++) {
+                document.write("<h3 style='color:darkred;'>" + months[month] + "</h3>");
+                document.write("<table border='1' cellspacing='0' cellpadding='5' style='border-collapse:collapse; width:60%; text-align:center;'>");
+                document.write("<tr style='background-color:#d1e7dd;'><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>");
+
+                let firstDay = new Date(year, month, 1).getDay();
+                let totalDays = daysInMonth[month];
+                let dayCount = 1;
+
+                document.write("<tr>");
+
+                for (let i = 0; i < firstDay; i++) {
+                    document.write("<td></td>");
+                }
+
+                for (let day = firstDay; day < 7; day++) {
+                    if (dayCount <= totalDays) {
+                        document.write("<td>" + dayCount + "</td>");
+                        dayCount++;
+                    }
+                }
+                document.write("</tr>");
+
+                while (dayCount <= totalDays) {
+                    document.write("<tr>");
+                    for (let day = 0; day < 7; day++) {
+                        if (dayCount <= totalDays) {
+                            document.write("<td>" + dayCount + "</td>");
+                            dayCount++;
+                        } else {
+                            document.write("<td></td>");
+                        }
+                    }
+                    document.write("</tr>");
+                }
+
+                document.write("</table><br>");
+            }
+        }
+    </script>
+</body>
+</html>
