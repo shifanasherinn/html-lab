@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Exam</title>
+
+    <script>
+        function checkAnswers() {
+            var score = 0;
+
+            if (document.getElementById("q1a2").checked)
+             {
+                score++;
+            }
+
+            if (document.getElementById("q2a3").checked) 
+            {
+                score++;
+            }
+ 
+            document.getElementById("result").innerHTML =
+                "Your Score: " + score + " / 2";
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <center>
+        <h2>Simple Online Exam</h2>
+
+        <!-- Question 1 -->
+        <h3>1. HTML stands for?</h3>
+        <input type="radio" name="q1" id="q1a1"> HighText Machine Language <br>
+        <input type="radio" name="q1" id="q1a2"> HyperText Markup Language <br>
+        <input type="radio" name="q1" id="q1a3"> Hyperlinks Management Language <br><br>
+
+        <!-- Question 2 -->
+        <h3>2. JavaScript is used for?</h3>
+        <input type="radio" name="q2" id="q2a1"> Styling Webpages <br>
+        <input type="radio" name="q2" id="q2a2"> Creating Databases <br>
+        <input type="radio" name="q2" id="q2a3"> Adding Interactivity <br><br>
+
+        <button onclick="checkAnswers()">Submit Exam</button>
+
+        <h2 id="result"></h2>
+    </center>
+
+</body>
+</html>
