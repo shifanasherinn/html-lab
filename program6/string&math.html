@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>String and Math Object Functions</title>
+</head>
+<body style="font-family: Arial; background-color: #f9f9f9; padding: 20px;">
+
+    <h2 style="text-align:center; color: darkblue;">
+        String and Math Object Functions using document.write()
+    </h2>
+
+    <script>
+        // Get user input for string
+        let str = prompt("Enter a string:");
+        document.write("<h3 style='color:darkgreen;'>String Object Functions</h3>");
+        document.write("Original String: " + str + "<br>");
+        document.write("Length: " + str.length + "<br>");
+        document.write("Uppercase: " + str.toUpperCase() + "<br>");
+        document.write("Lowercase: " + str.toLowerCase() + "<br>");
+        document.write("Substring (0,5): " + str.substring(0,5) + "<br>");
+        document.write("Character at index 2: " + str.charAt(2) + "<br>");
+        document.write("Replace 'a' with '@': " + str.replace(/a/g, "@") + "<br>");
+        document.write("Index of 'Java': " + str.indexOf("Java") + "<br><hr>");
+
+    
+        let num = parseFloat(prompt("Enter a number:"));
+        document.write("<h3 style='color:darkred;'>Math Object Functions</h3>");
+        document.write("Original Number: " + num + "<br>");
+        document.write("Square Root: " + Math.sqrt(num) + "<br>");
+        document.write("Power (num²): " + Math.pow(num, 2) + "<br>");
+        document.write("Absolute Value: " + Math.abs(num) + "<br>");
+        document.write("Round: " + Math.round(num) + "<br>");
+        document.write("Ceil (Round Up): " + Math.ceil(num) + "<br>");
+        document.write("Floor (Round Down): " + Math.floor(num) + "<br>");
+        document.write("Random Number (0–1): " + Math.random().toFixed(2) + "<br>");
+        document.write("Value of PI: " + Math.PI.toFixed(4) + "<br>");
+    </script>
+
+</body>
+</html>
